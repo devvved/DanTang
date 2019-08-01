@@ -47,7 +47,7 @@ class YMSearchViewController: YMBaseViewController, UISearchBarDelegate, UIColle
     private func setupCollectionView() {
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.delegate = self
-        collectionView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
+        collectionView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
         collectionView.backgroundColor = view.backgroundColor
         collectionView.dataSource = self
         let nib = UINib(nibName: String(describing: YMCollectionViewCell.self), bundle: nil)
@@ -57,7 +57,7 @@ class YMSearchViewController: YMBaseViewController, UISearchBarDelegate, UIColle
     }
     
     /// 搜索条件点击
-    func sortButtonClick() {
+    @objc func sortButtonClick() {
         popView.show()
     }
     
@@ -68,7 +68,7 @@ class YMSearchViewController: YMBaseViewController, UISearchBarDelegate, UIColle
     }()
     
     /// 返回按钮、取消按钮点击
-    func navigationBackClick() {
+    @objc func navigationBackClick() {
         navigationController?.popViewController(animated: true)
     }
     
@@ -134,7 +134,7 @@ class YMSearchViewController: YMBaseViewController, UISearchBarDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(5, 5, 5, 5)
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
     // MARK: - YMCollectionViewCellDelegate

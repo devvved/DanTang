@@ -49,7 +49,7 @@ class YMProductDetailViewController: YMBaseViewController, YMProductDetailToolBa
     }
     
     /// 分享按钮点击
-    func shareBBItemClick() {
+    @objc func shareBBItemClick() {
         YMActionSheet.show()
     }
 

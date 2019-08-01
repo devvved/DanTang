@@ -39,6 +39,6 @@ class YMTabBarController: UITabBarController {
         childController.tabBarItem.selectedImage = UIImage(named: imageName + "selected")
         childController.title = title
         let navC = YMNavigationController(rootViewController: childController)
-        addChildViewController(navC)
+        addChild(navC)
     }
 }

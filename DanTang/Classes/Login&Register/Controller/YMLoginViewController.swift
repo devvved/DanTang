@@ -42,11 +42,11 @@ class YMLoginViewController: YMBaseViewController {
     }
     
     /// 取消按钮点击
-    func cancelButtonClick() {
+    @objc func cancelButtonClick() {
         dismiss(animated: true, completion: nil)
     }
     /// 注册按钮点击
-    func regiisterButtonClick() {
+    @objc func regiisterButtonClick() {
         let registerVC = YMRegisterViewController()
         registerVC.title = "注册"
         navigationController?.pushViewController(registerVC, animated: true)

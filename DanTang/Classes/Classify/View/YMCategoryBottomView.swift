@@ -95,7 +95,7 @@ class YMCategoryBottomView: UIView {
         return button
     }
     
-    func groupButonClick(button: UIButton) {
+    @objc func groupButonClick(button: UIButton) {
         print(button.tag)
         delegate?.bottomViewButtonDidClicked(button: button)
     }

@@ -33,11 +33,11 @@ class YMTMALLViewController: YMBaseViewController, UIWebViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "GiftShare_icon_18x22_"), style: .plain, target: self, action: #selector(shareBBItemClick))
     }
     
-    func shareBBItemClick() {
+    @objc func shareBBItemClick() {
         YMActionSheet.show()
     }
     
-    func navigationBackClick() {
+    @objc func navigationBackClick() {
         dismiss(animated: true, completion: nil)
     }
 

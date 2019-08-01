@@ -33,7 +33,7 @@ class YMTopicViewController: UITableViewController, YMHomeCellDelegate {
         }
     }
     
-    func loadHomeData() {
+    @objc func loadHomeData() {
         // 获取首页数据
         weak var weakSelf = self
         YMNetworkTool.shareNetworkTool.loadHomeInfo(id: type) { (homeItems) in
@@ -46,7 +46,7 @@ class YMTopicViewController: UITableViewController, YMHomeCellDelegate {
     func setupTableView() {
         tableView.rowHeight = 160
         tableView.separatorStyle = .none
-        tableView.contentInset = UIEdgeInsetsMake(kTitlesViewY + kTitlesViewH, 0, tabBarController!.tabBar.height, 0)
+        tableView.contentInset = UIEdgeInsets(top: kTitlesViewY + kTitlesViewH, left: 0, bottom: tabBarController!.tabBar.height, right: 0)
         tableView.scrollIndicatorInsets = tableView.contentInset
         let nib = UINib(nibName: String(describing: YMHomeCell.self), bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: homeCellID)

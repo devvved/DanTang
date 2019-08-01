@@ -107,7 +107,7 @@ class YMActionSheet: UIView {
         return cancelButton
     }()
     
-    func cancelButtonClick() {
+    @objc func cancelButtonClick() {
         UIView.animate(withDuration: kAnimationDuration, animations: {
             self.bgView.y = SCREENH
         }) { (_) in

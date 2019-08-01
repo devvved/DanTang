@@ -11,14 +11,22 @@ import SVProgressHUD
 
 class YMNavigationController: UINavigationController {
 
-    internal override class func initialize() {
-        super.initialize()
+//    internal override class func initialize() {
+//        super.initialize()
+//
+//    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         /// 设置导航栏标题
         let navBar = UINavigationBar.appearance()
         navBar.barTintColor = YMGlobalRedColor()
         navBar.tintColor = UIColor.white
-        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
+        navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
     }
+    
+    
     /**
      # 统一所有控制器导航栏左上角的返回按钮
      # 让所有push进来的控制器，它的导航栏左上角的内容都一样
@@ -36,7 +44,7 @@ class YMNavigationController: UINavigationController {
         super.pushViewController(viewController, animated: true)
     }
     /// 返回按钮
-    func navigationBackClick() {
+    @objc func navigationBackClick() {
         if SVProgressHUD.isVisible() {
             SVProgressHUD.dismiss()
         }

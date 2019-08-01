@@ -85,7 +85,7 @@ class YMCategoryHeaderViewController: YMBaseViewController, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(kMargin, kMargin, kMargin, kMargin)
+        return UIEdgeInsets(top: kMargin, left: kMargin, bottom: kMargin, right: kMargin)
     }
 }
 

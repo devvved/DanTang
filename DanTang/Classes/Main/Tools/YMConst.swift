@@ -47,7 +47,8 @@ enum YMOtherLoginButtonType: Int {
 }
 
 /// 服务器地址
-let BASE_URL = "http://api.dantangapp.com/"
+//let BASE_URL = "http://api.dantangapp.com/"
+let BASE_URL = "http://rap2api.taobao.org/app/mock/227082/"
 
 /// 第一次启动
 let YMFirstLaunch = "firstLaunch"

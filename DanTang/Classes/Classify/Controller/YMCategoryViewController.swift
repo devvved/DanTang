@@ -22,12 +22,12 @@ class YMCategoryViewController: YMBaseViewController, YMCategoryBottomViewDelega
         view.addSubview(scrollView)
         // 顶部控制器
         let headerViewController = YMCategoryHeaderViewController()
-        addChildViewController(headerViewController)
+        addChild(headerViewController)
         
         let topBGView = UIView(frame: CGRect(x: 0, y: 0, width: SCREENW, height: 135))
         scrollView.addSubview(topBGView)
         
-        let headerVC = childViewControllers[0]
+        let headerVC = children[0]
         topBGView.addSubview(headerVC.view)
         
         let bottomBGView = YMCategoryBottomView(frame: CGRect(x: 0, y: topBGView.frame.maxY + 10, width: SCREENW, height: SCREENH - 160))
@@ -37,7 +37,7 @@ class YMCategoryViewController: YMBaseViewController, YMCategoryBottomViewDelega
         scrollView.contentSize = CGSize(width: SCREENW, height: bottomBGView.frame.maxY)
     }
     
-    func categoryRightBBClick() {
+    @objc func categoryRightBBClick() {
         let searchBarVC = YMSearchViewController()
         navigationController?.pushViewController(searchBarVC, animated: true)
     }

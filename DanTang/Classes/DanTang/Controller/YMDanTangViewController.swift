@@ -33,7 +33,7 @@ class YMDanTangViewController: YMBaseViewController, UIScrollViewDelegate {
                 let vc = YMTopicViewController()
                 vc.title = channel.name!
                 vc.type = channel.id!
-                weakSelf!.addChildViewController(vc)
+                weakSelf!.addChild(vc)
             }
             //设置顶部标签栏
             weakSelf!.setupTitlesView()
@@ -47,7 +47,7 @@ class YMDanTangViewController: YMBaseViewController, UIScrollViewDelegate {
         for channel in channels {
             let vc = YMTopicViewController()
             vc.title = channel.name
-            addChildViewController(vc)
+            addChild(vc)
         }
     }
     
@@ -81,7 +81,7 @@ class YMDanTangViewController: YMBaseViewController, UIScrollViewDelegate {
         bgView.addSubview(arrowButton)
         
         //内部子标签
-        let count = childViewControllers.count
+        let count = children.count
         let width = titlesView.width / CGFloat(count)
         let height = titlesView.height
         
@@ -91,7 +91,7 @@ class YMDanTangViewController: YMBaseViewController, UIScrollViewDelegate {
             button.width = width
             button.x = CGFloat(index) * width
             button.tag = index
-            let vc = childViewControllers[index]
+            let vc = children[index]
             button.titleLabel!.font = UIFont.systemFont(ofSize: 14)
             button.setTitle(vc.title!, for: .normal)
             button.setTitleColor(UIColor.gray, for: .normal)
@@ -113,14 +113,14 @@ class YMDanTangViewController: YMBaseViewController, UIScrollViewDelegate {
     }
     
     /// 箭头按钮点击
-    func arrowButtonClick(button: UIButton) {
+    @objc func arrowButtonClick(button: UIButton) {
         UIView.animate(withDuration: kAnimationDuration) { 
             button.imageView?.transform = button.imageView!.transform.rotated(by: CGFloat(M_PI))
         }
     }
     
     /// 标签上的按钮点击
-    func titlesClick(button: UIButton) {
+    @objc func titlesClick(button: UIButton) {
         // 修改按钮状态
         selectedButton!.isEnabled = true
         button.isEnabled = false
@@ -144,7 +144,7 @@ class YMDanTangViewController: YMBaseViewController, UIScrollViewDelegate {
         let contentView = UIScrollView()
         contentView.frame = view.bounds
         contentView.delegate = self
-        contentView.contentSize = CGSize(width: contentView.width * CGFloat(childViewControllers.count), height: 0)
+        contentView.contentSize = CGSize(width: contentView.width * CGFloat(children.count), height: 0)
         contentView.isPagingEnabled = true
         view.insertSubview(contentView, at: 0)
         self.contentView = contentView
@@ -158,7 +158,7 @@ class YMDanTangViewController: YMBaseViewController, UIScrollViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Feed_SearchBtn_18x18_"), style: .plain, target: self, action: #selector(dantangRightBBClick))
     }
 
-    func dantangRightBBClick() {
+    @objc func dantangRightBBClick() {
         let searchBarVC = YMSearchViewController()
         navigationController?.pushViewController(searchBarVC, animated: true)
     }
@@ -169,7 +169,7 @@ class YMDanTangViewController: YMBaseViewController, UIScrollViewDelegate {
         // 当前索引
         let index = Int(scrollView.contentOffset.x / scrollView.width)
         // 取出子控制器
-        let vc = childViewControllers[index]
+        let vc = children[index]
         vc.view.x = scrollView.contentOffset.x
         vc.view.y = 0 // 设置控制器的y值为0(默认为20)
         //设置控制器的view的height值为整个屏幕的高度（默认是比屏幕少20）

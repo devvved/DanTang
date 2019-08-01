@@ -54,7 +54,7 @@ class YMSortTableView: UIView, UITableViewDelegate, UITableViewDataSource {
         }
         
         tableView.snp.makeConstraints { (make) in
-            make.edges.equalTo(bgView).offset(UIEdgeInsetsMake(kMargin, kMargin, -kMargin, 0) as! ConstraintOffsetTarget)
+            make.edges.equalTo(bgView).offset(UIEdgeInsets(top: kMargin, left: kMargin, bottom: -kMargin, right: 0) as! ConstraintOffsetTarget)
         }
     }
     

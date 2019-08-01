@@ -52,7 +52,7 @@ class YMShareButtonView: UIView {
         }
     }
     
-    func shareButtonClick(button: UIButton) {
+    @objc func shareButtonClick(button: UIButton) {
         if let shareButtonType = YMShareButtonType(rawValue: button.tag) {
             switch shareButtonType {
             case .WeChatTimeline:

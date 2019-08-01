@@ -379,6 +379,7 @@ class YMNetworkTool: NSObject {
     func loadStylesOrCategoryInfo(id: Int, finished:@escaping (_ items: [YMCollectionPost]) -> ()) {
         SVProgressHUD.show(withStatus: "正在加载...")
         let url = BASE_URL + "v1/channels/\(id)/items"
+//        let url = BASE_URL + "v1/channels/items"
         let params = ["limit": 20,
                       "offset": 0]
         Alamofire

@@ -59,7 +59,7 @@ class YMMeFooterView: UIView {
     }()
     
     
-    func footerViewButtonClick() {
+    @objc func footerViewButtonClick() {
         let nav = YMNavigationController(rootViewController: YMLoginViewController())
         UIApplication.shared.keyWindow?.rootViewController?.present(nav, animated: true, completion: nil)
     }

@@ -79,14 +79,14 @@ class YMMeChoiceView: UIView {
         return indicatorView
     }()
     
-    func leftButtonClick(button: UIButton) {
+    @objc func leftButtonClick(button: UIButton) {
         button.isSelected = !button.isSelected
         UIView.animate(withDuration: kAnimationDuration) {
             self.indicatorView.x = 0
         }
     }
     
-    func rightButtonClick(button: UIButton) {
+    @objc func rightButtonClick(button: UIButton) {
         button.isSelected = !button.isSelected
         UIView.animate(withDuration: kAnimationDuration) {
             self.indicatorView.x = SCREENW * 0.5

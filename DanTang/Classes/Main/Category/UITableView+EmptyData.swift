@@ -27,7 +27,7 @@ public extension UITableView {
         }
     }
     
-    func emptyButtonClick() {
+    @objc func emptyButtonClick() {
         print("---")
     }
 }

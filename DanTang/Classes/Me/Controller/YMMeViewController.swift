@@ -46,7 +46,7 @@ class YMMeViewController: YMBaseViewController, UITableViewDataSource, UITableVi
     }()
 
     // MARK: - 头部按钮点击
-    func iconButtonClick() {
+    @objc func iconButtonClick() {
         // 判断是否登录
         if UserDefaults.standard.bool(forKey: isLogin) {
             let actionSheet = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
@@ -69,13 +69,13 @@ class YMMeViewController: YMBaseViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    func messageButtonClick() {
+    @objc func messageButtonClick() {
         let messageVC = YMMessageViewController()
         messageVC.title = "消息"
         navigationController?.pushViewController(messageVC, animated: true)
     }
     
-    func settingButtonClick() {
+    @objc func settingButtonClick() {
         let settingVC = YMSettingViewController()
         settingVC.title = "更多"
         navigationController?.pushViewController(settingVC, animated: true)
