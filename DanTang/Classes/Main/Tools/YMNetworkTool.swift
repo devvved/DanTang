@@ -17,8 +17,8 @@ class YMNetworkTool: NSObject {
     
     /// 获取首页数据
     func loadHomeInfo(id: Int, finished:@escaping (_ homeItems: [YMHomeItem]) -> ()) {
-        //        let url = BASE_URL + "v1/channels/\(id)/items?gender=1&generation=1&limit=20&offset=0"
-        let url = BASE_URL + "v1/channels/\(id)/items"
+        
+        let url = BASE_URL + "v1/channels/4/items"
         let params = ["gender": 1,
                       "generation": 1,
                       "limit": 20,
@@ -378,7 +378,7 @@ class YMNetworkTool: NSObject {
     /// 底部 风格品类 -> 列表
     func loadStylesOrCategoryInfo(id: Int, finished:@escaping (_ items: [YMCollectionPost]) -> ()) {
         SVProgressHUD.show(withStatus: "正在加载...")
-        let url = BASE_URL + "v1/channels/\(id)/items"
+        let url = BASE_URL + "v1/channels/4/items"
 //        let url = BASE_URL + "v1/channels/items"
         let params = ["limit": 20,
                       "offset": 0]
